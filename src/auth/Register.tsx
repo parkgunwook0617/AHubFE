@@ -33,7 +33,7 @@ const Register = () => {
                     <div className="text-3xl">비밀번호 확인</div>
                     <input className="border-1 rounded-lg" type="password" value={checkpassword} onChange={e => setCheckpassword(e.target.value)}></input>
                     {password !== checkpassword && checkpassword.length !== 0 && <div className="text-red-500">비밀번호가 일치하지 않습니다.</div>}
-                    <button className="border-1 rounded-lg p-2 text-3xl mt-5" onClick={handleRegister}>회원가입</button>
+                    <button className="border-1 rounded-lg p-2 text-3xl mt-5" onClick={handleRegister}>회원가입하기</button>
                 </div>
             </div>
         </div>
