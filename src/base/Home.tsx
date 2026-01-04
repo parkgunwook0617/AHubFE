@@ -14,7 +14,7 @@ const Home = () => {
         <div className="flex flex-col justify-center items-center h-screen gap-10 bg-zinc-200">
             <div className="text-7xl font-bold"><span className="text-sky-400">A</span>Hub</div>
             <div className="text-5xl font-sub">당신의 시간을 채웠던 수많은 장면들, 이제는 잊히지 않게.</div>
-            <Link to="/login" className="text-3xl border-1 p-5 rounded-[30px]">시작하러 가기</Link>
+            <Link to="/login" className="text-3xl text-white p-5 rounded-[30px] bg-sky-400 shadow-xl active:scale-[0.95] hover:bg-blue-500 transition-all">시작하러 가기</Link>
             <LogoLoop logos={imageLogos} logoHeight={240} speed={60} />
         </div>
     );
