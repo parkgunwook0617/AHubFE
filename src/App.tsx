@@ -8,6 +8,7 @@ import DetailPage from './base/DetailPage'
 import Search from './base/Search'
 import ProtectedRoute from './components/ProtectedRoute'
 import Profile from './base/Profile'
+import IndividualList from './base/IndividualList'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/detail/:title" element={<DetailPage />} />
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/individuallist" element={<IndividualList />} />
         </Route>
       </Routes>
     </BrowserRouter>
