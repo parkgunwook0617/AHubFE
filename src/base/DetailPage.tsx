@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 interface AnimeItem {
     title: string;
@@ -64,6 +65,23 @@ const DetailPage = () => {
         }
     }
 
+    const removeFromFavorite = async () => {
+        try {
+            await axios.delete(
+                `${import.meta.env.VITE_API_URL}/user/deleteFavorite`,
+                {
+                    params: {
+                        title: decodedTitle
+                    },
+                    withCredentials: true
+                }
+            );
+            setIsAlreadyFavorite(false);
+        } catch {
+            alert("즐겨찾기 삭제 중 오류가 발생했습니다.");
+        }
+    }
+
     useEffect(() => {
         checkTargetIsFavorite();
         getDetailInformation();
@@ -71,22 +89,14 @@ const DetailPage = () => {
 
     return (
         <div className="h-screen">
-            <nav className="p-5 border-b-2">
-                <div className="flex justify-between items-center">
-                    <div className="text-xl font-bold font-sub">AHub</div>
-                    <div className="flex space-x-4">
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded">Search</button>
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded">Profile</button>
-                    </div>
-                </div>
-            </nav>
+            <NavBar />
             <div>
                 {animationObject && (
                     <div className="p-10">
                         <div className="flex items-center justify-between mb-6">
                             <h1 className="text-3xl font-bold mb-4">{animationObject.title}</h1>
                             {isAlreadyFavorite ? (
-                                <button className="px-4 py-2 bg-gray-400 text-white rounded mb-4" disabled>이미 등록한 애니메이션입니다</button>
+                                <button className="px-4 py-2 bg-red-400 text-white rounded mb-4 cursor-pointer" onClick={removeFromFavorite}>등록취소하기</button>
                             ) : (
                                 <button className="px-4 py-2 bg-blue-500 text-white rounded mb-4 cursor-pointer" onClick={addToFavorite}>등록하기</button>
                             )}
