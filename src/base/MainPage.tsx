@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "../components/Pagination";
+import NavBar from "../components/NavBar";
 
 interface AnimeItem {
     title: string;
@@ -38,15 +39,7 @@ const MainPage = () => {
 
     return (
         <div className="h-screen">
-            <nav className="p-5 border-b-2">
-                <div className="flex justify-between items-center">
-                    <div className="text-xl font-bold font-sub">AHub</div>
-                    <div className="flex space-x-4">
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded">Search</button>
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded">Profile</button>
-                    </div>
-                </div>
-            </nav>
+            <NavBar />
             {!isLoaded && (
                 <div className="flex justify-center items-center h-96">
                     <div className="text-gray-500">Loading...</div>
