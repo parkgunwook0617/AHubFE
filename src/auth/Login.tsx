@@ -1,19 +1,25 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import useAuthStore from './store/useAuthStore';
 
 const Login = () => {
     const [id, setId] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const { checkAuth } = useAuthStore();
 
     const handleLogin = async () => {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/signIn`, {
             id: id,
             password: password,
-        });
+        },
+            {
+                withCredentials: true,
+            });
 
         if (response.status === 200) {
+            await checkAuth();
             navigate('/mainpage');
         }
     }
