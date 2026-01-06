@@ -80,7 +80,7 @@ const Register = () => {
             SetRevealMailDuplicatedAnnouncement(false);
         } catch (error: unknown) {
             if (axios.isAxiosError(error)) {
-                if (error.response?.status === 400) {
+                if (error.response?.status === 409) {
                     setIsMailDuplicated(false);
                     SetRevealMailDuplicatedAnnouncement(true);
                 }
@@ -123,15 +123,10 @@ const Register = () => {
 
     const validateAuthCode = async () => {
         try {
-            console.log(mail)
-            console.log(authCode)
             await axios.post(`${import.meta.env.VITE_API_URL}/mail/validatemail`,
-                null,
                 {
-                    params: {
-                        email: mail,
-                        authCode: authCode
-                    }
+                    email: mail,
+                    authCode: authCode
                 }
             )
 

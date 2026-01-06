@@ -51,11 +51,10 @@ const DetailPage = () => {
         try {
             await axios.post(
                 `${import.meta.env.VITE_API_URL}/user/saveFavorite`,
-                null,
                 {
-                    params: {
-                        title: decodedTitle
-                    },
+                    title: decodedTitle
+                },
+                {
                     withCredentials: true
                 }
             );
