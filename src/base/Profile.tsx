@@ -49,9 +49,10 @@ const Profile = () => {
         try {
             await axios.post(
                 `${import.meta.env.VITE_API_URL}/auth/checkUser`,
-                null,
                 {
-                    params: { password: password },
+                    password: password
+                },
+                {
                     withCredentials: true
                 }
             );
@@ -65,9 +66,10 @@ const Profile = () => {
     const changePassword = async (newpassword: string) => {
         try {
             await axios.patch(`${import.meta.env.VITE_API_URL}/auth/chagePassword`,
-                null,
                 {
-                    params: { newPassword: newpassword },
+                    password: newpassword
+                },
+                {
                     withCredentials: true
                 });
 
@@ -104,12 +106,12 @@ const Profile = () => {
                                 <div>
                                     <div className="text-gray-500 text-xl">새 비밀번호를 입력해주세요.</div>
                                     <input
-                                        className="w-full mt-1 border border-zinc-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                        className="w-full mt-5 border border-zinc-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                         type="password"
                                         value={newPassword}
                                         onChange={e => setNewPassword(e.target.value)}
                                     />
-                                    <div className="text-gray-500 text-xl">비밀번호 확인</div>
+                                    <div className="text-gray-500 text-xl mt-5">비밀번호 확인</div>
                                     <input
                                         className="w-full mt-1 border border-zinc-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                         type="password"
@@ -121,7 +123,7 @@ const Profile = () => {
                                             비밀번호가 일치하지 않습니다.
                                         </div>
                                     )}
-                                    <div className="flex gap-10">
+                                    <div className="flex gap-10 mt-5">
                                         <button className="px-4 py-2 bg-blue-500 text-white rounded font-bold" onClick={() => changePassword(newPassword)}>확인</button>
                                         <button className="px-4 py-2 bg-red-400 text-white rounded font-bold" onClick={() => { setIsChecked(false); setNewPassword(""); setCheckPassword(""); closePasswordModal() }}>취소</button>
                                     </div>
@@ -129,11 +131,11 @@ const Profile = () => {
                                 : <div>
                                     <div className="text-gray-500 text-xl">현재 비밀번호를 입력해주세요.</div>
                                     <input
-                                        className="w-full mt-1 border border-zinc-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                                        className="w-full mt-5 border border-zinc-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                         type="password"
                                         onChange={e => setOldPassword(e.target.value)}
                                     />
-                                    <div className="flex gap-10">
+                                    <div className="flex gap-10 mt-5">
                                         <button className="px-4 py-2 bg-blue-500 text-white rounded font-bold" onClick={() => checkUser(oldPassword)}>확인</button>
                                         <button className="px-4 py-2 bg-red-400 text-white rounded font-bold" onClick={() => closePasswordModal()}>취소</button>
                                     </div>

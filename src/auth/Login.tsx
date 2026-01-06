@@ -39,11 +39,8 @@ const Login = () => {
     const resetPassword = async () => {
         try {
             await axios.post(`${import.meta.env.VITE_API_URL}/mail/reset-password-request`,
-                null,
                 {
-                    params: {
-                        email: mail
-                    }
+                    email: mail
                 });
             setIsEmailUnregistered(false);
 
