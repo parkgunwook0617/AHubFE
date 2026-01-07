@@ -9,6 +9,9 @@ import Search from './base/Search'
 import ProtectedRoute from './components/ProtectedRoute'
 import Profile from './base/Profile'
 import IndividualList from './base/IndividualList'
+import axios from 'axios'
+
+axios.defaults.withCredentials = true;
 
 function App() {
 

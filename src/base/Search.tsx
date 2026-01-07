@@ -102,6 +102,10 @@ const Search = () => {
         }
     }, [searchYear]);
 
+    useEffect(() => {
+        searchSetMethod("title");
+    }, [])
+
 
     const offset = (page - 1) * limit;
     const currentPageData = data.slice(offset, offset + limit);
@@ -112,9 +116,9 @@ const Search = () => {
             <div className="flex flex-col items-center text-xl font-sub mt-10">
                 <div className="mb-5">검색방식</div>
                 <div className="flex gap-10">
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => handleSearchMethod("genre")}>장르</button>
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => handleSearchMethod("date")}>상영년도</button>
-                    <button className="px-4 py-2 bg-blue-500 text-white rounded" onClick={() => handleSearchMethod("title")}>제목</button>
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-all cursor-pointer" onClick={() => handleSearchMethod("genre")}>장르</button>
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-all cursor-pointer" onClick={() => handleSearchMethod("date")}>상영년도</button>
+                    <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-all cursor-pointer" onClick={() => handleSearchMethod("title")}>제목</button>
                 </div>
             </div>
             {searchMethod === "title" && (
