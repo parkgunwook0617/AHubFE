@@ -1,1 +1,33 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "NotoSansKR-Regular";
+    src: url("/font/NotoSansKR-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "esamanru-Medium";
+    src: url("/font/esamanru-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@theme {
+    --font-main: "NotoSansKR-Regular", sans-serif;
+    --font-sub: "esamanru-Medium", sans-serif;
+}
+
+@layer base {
+    body {
+        background-color: #e4e4e7;
+        font-family: var(--font-main);
+        caret-color: transparent;
+        user-select: none;
+    }
+
+    input {
+        caret-color: auto;
+    }
+}
