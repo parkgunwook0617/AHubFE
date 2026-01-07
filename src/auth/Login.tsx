@@ -13,6 +13,7 @@ const Login = () => {
     const { checkAuth } = useAuthStore();
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [isEmailUnregistered, setIsEmailUnregistered] = useState(false);
+    const [isSend, setIsSend] = useState(false);
 
     const handleLogin = async () => {
         try {
@@ -43,6 +44,13 @@ const Login = () => {
                     email: mail
                 });
             setIsEmailUnregistered(false);
+            setIsSend(true);
+            setTimeout(() => {
+                setIsSend(false);
+                closeModal();
+                setIsEmailUnregistered(false);
+                setMail('');
+            }, 2000);
 
         } catch (error: unknown) {
             if (axios.isAxiosError(error)) {
@@ -108,7 +116,7 @@ const Login = () => {
                     <button className="text-blue-600 font-semibold hover:underline" onClick={() => openModal()}>비밀번호 초기화</button>
                 </div>
                 <Modal isOpen={modalIsOpen} overlayClassName="fixed inset-0 bg-white flex items-center justify-center" className="p-8 rounded-2xl shadow-xl w-[90%] max-w-[450px] outline-none">
-                    <div className="mb-5">
+                    <div>
                         <div className="text-3xl font-sub">비밀번호 초기화</div>
                         <div className="text-gray-500 text-xl">초기화할 계정의 이메일을 입력해 주세요.</div>
                         <input
@@ -118,11 +126,12 @@ const Login = () => {
                             onChange={e => setMail(e.target.value)}
                         />
                     </div>
-                    <div className="flex gap-10">
-                        <button className="px-4 py-2 bg-blue-500 text-white rounded font-bold" onClick={() => resetPassword()}>확인</button>
-                        <button className="px-4 py-2 bg-red-400 text-white rounded font-bold" onClick={() => closeModal()}>취소</button>
+                    {isEmailUnregistered === true && (<div className="text-red-500 text-sm font-bold">가입되지 않은 메일입니다.</div>)}
+                    {isSend === true && (<div className="text-green-600 font-semibold text-sm mt-1 pl-1">메일 발신되었습니다.</div>)}
+                    <div className="flex gap-10 mt-5">
+                        <button className="px-4 py-2 bg-blue-500 text-white rounded font-bold hover:bg-blue-700 transition-all" onClick={() => resetPassword()}>확인</button>
+                        <button className="px-4 py-2 bg-red-400 text-white rounded font-bold hover:bg-red-500 transition-all" onClick={() => closeModal()}>취소</button>
                     </div>
-                    {isEmailUnregistered == true && (<div className="text-red-500 text-sm font-bold">가입되지 않은 메일입니다.</div>)}
                 </Modal>
             </div>
         </div>

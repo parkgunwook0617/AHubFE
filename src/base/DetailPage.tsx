@@ -95,9 +95,9 @@ const DetailPage = () => {
                         <div className="flex items-center justify-between mb-6">
                             <h1 className="text-3xl font-bold mb-4">{animationObject.title}</h1>
                             {isAlreadyFavorite ? (
-                                <button className="px-4 py-2 bg-red-400 text-white rounded mb-4 cursor-pointer" onClick={removeFromFavorite}>등록취소하기</button>
+                                <button className="px-4 py-2 bg-red-400 text-white rounded mb-4 cursor-pointer hover:bg-red-500 transition-all" onClick={removeFromFavorite}>등록취소하기</button>
                             ) : (
-                                <button className="px-4 py-2 bg-blue-500 text-white rounded mb-4 cursor-pointer" onClick={addToFavorite}>등록하기</button>
+                                <button className="px-4 py-2 bg-blue-500 text-white rounded mb-4 cursor-pointer hover:bg-blue-700 transition-all" onClick={addToFavorite}>등록하기</button>
                             )}
                         </div>
                         <div className="flex justify-center gap-20">
