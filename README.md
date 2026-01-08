@@ -1,3 +1,23 @@
+## Tech Stack
+<img src="https://img.shields.io/badge/react-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/tailwindcss-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+<img src="https://img.shields.io/badge/axios-5A29E4?style=flat-square&logo=axios&logoColor=white"/>
+<img src="https://img.shields.io/badge/typescript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+<img src="https://img.shields.io/badge/zustand-%23443E38?style=flat-square&logoColor=white"/>
+
+## Dependencies
+| Category | Library | Version | Description |
+| :--- | :--- | :--- | :--- |
+| **Framework** | **React** | 19.2.0 | 컴포넌트 기반 UI 라이브러리 |
+| **Build Tool** | **Vite** | 7.2.4 | 차세대 프론트엔드 빌드 도구 |
+| **Language** | **TypeScript** | 5.9.3 | 정적 타이핑 지원을 통한 코드 안정성 확보 |
+| **Routing** | **React Router** | 7.11.0 | SPA 기반 클라이언트 사이드 라우팅 |
+| **State** | **Zustand** | 5.0.9 | Flux 패턴 기반의 경량 상태 관리 라이브러리 |
+| **Styling** | **Tailwind CSS** | 4.1.18 | Utility-first 기반의 CSS 프레임워크 |
+| **HTTP Client** | **Axios** | 1.13.2 | Promise 기반 API 통신 라이브러리 |
+| **UI Component** | **React Modal** | 3.16.3 | 접근성 지원 웹 모달 라이브러리 |
+| **Lint / Format** | **ESLint** | 9.39.1 | 코드 품질 검사 및 정적 분석 도구 |
+| **Post-CSS** | **Autoprefixer** | 10.4.23 | 브라우저 호환성 CSS 접두사 자동 추가 |
+
 ## Page Overview
 <table style="width:100%; text-align:center; vertical-align:middle;">
   <tr>
