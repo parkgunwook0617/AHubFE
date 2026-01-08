@@ -1,73 +1,82 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Page Overview
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>랜딩 페이지</th>
+  </tr>
+  <tr>
+    <td><img width="1708" height="1284" alt="Landing" src="https://github.com/user-attachments/assets/ec16047c-9d26-465f-bca8-5d737d1ca77b" /></td>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>로그인 페이지
+    <th>회원가입 페이지
+    <th>비밀번호 초기화 모달
+  </tr>
+  <tr>
+    <td><img width="1699" height="1243" alt="화면 캡처 2026-01-07 210224" src="https://github.com/user-attachments/assets/e22fee44-cdf4-4f33-8722-e66b73cc0aa7" /></td>
+    <td><img width="1699" height="1293" alt="image" src="https://github.com/user-attachments/assets/2453a27c-24f0-481a-ab13-4c2dad31e19c" /></td>
+    <td><img width="1712" height="1291" alt="image" src="https://github.com/user-attachments/assets/4fdadf51-dc12-4f91-92c6-d7ca078d6158" /></td>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>메인 페이지
+  </tr>
+  <tr>
+    <td><img width="1703" height="1300" alt="image" src="https://github.com/user-attachments/assets/d00500fe-5820-4f9b-bd4a-34f718361adc" /></td>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>세부 정보 페이지
+  </tr>
+  <tr>
+    <td><img width="1702" height="1297" alt="image" src="https://github.com/user-attachments/assets/161730af-3b10-4154-9e76-1c7396bbb5c6" /></td>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>탐색 페이지
+  </tr>
+  <tr>
+    <td><img width="1710" height="1296" alt="image" src="https://github.com/user-attachments/assets/6a4be8ff-d079-436a-8195-30bd9ae02418" /></td>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th>개인 설정 페이지
+    <th>개인 애니메이션 페이지
+  </tr>
+  <tr>
+    <td><img width="1677" height="1289" alt="image" src="https://github.com/user-attachments/assets/0d09adc3-93b7-4650-b7ad-d8e71eb7cb65" /></td>
+     <td><img width="1694" height="1302" alt="image" src="https://github.com/user-attachments/assets/b981df3f-00ad-4d73-a17b-25eaaeda1a4b" /></td>
+  </tr>
+  </tr>
+</table>
+<table style="width:100%; text-align:center; vertical-align:middle;">
+  <tr>
+    <th colspan="2" style="background-color: #f8f9fa; font-size: 1.2em; padding: 10px; border-right: 1px solid #ddd;">
+      비밀번호 재설정 모달
+    </th>
+    <th colspan="1" style="background-color: #fff0f0; font-size: 1.2em; padding: 10px; color: #d9534f;">
+      회원 탈퇴 모달
+    </th>
+  </tr>
+  <tr>
+    <th style="width:33%;">비밀번호 인증</th>
+    <th style="width:33%;">비밀번호 재설정</th>
+    <th style="width:34%;">회원 탈퇴</th>
+  </tr>
+  <tr>
+    <td>
+      <img width="100%" alt="비밀번호 인증" src="https://github.com/user-attachments/assets/33ee1bd7-245f-40b9-8763-139d8ba94243" />
+    </td>
+    <td>
+      <img width="100%" alt="비밀번호 재설정" src="https://github.com/user-attachments/assets/9f527e4a-4aea-4c51-9816-c22ed650f045" />
+    </td>
+    <td>
+      <img width="100%" alt="회원 탈퇴" src="https://github.com/user-attachments/assets/2d559812-c72d-4a64-9ee7-6565f593bd4b" />
+    </td>
+  </tr>
+</table>
